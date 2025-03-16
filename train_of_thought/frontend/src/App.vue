@@ -1,21 +1,33 @@
-<script lang="ts" setup>
-import HelloWorld from './components/HelloWorld.vue'</script>
+<script setup lang="ts">
+  import SpeechOutputView from './views/SpeechOutputView.vue';
+  import RecordButton from './components/RecordButton.vue';
+  import NotificationCard from './components/NotificationCard.vue';
+  // import { watch } from 'vue';
+  // import { useRecordingState } from './constants/store';
+  // import { severityLevel } from './constants/severity';
+
+  // const isRecording = useRecordingState();
+  // let notificationProps: severityLevel = severityLevel.info;
+  // let notificationText: string = '';
+
+  // watch(
+  //   () => isRecording.value,
+  //   (value) => {
+  //     notificationProps = severityLevel.info;
+  //     notificationText = value ? 'recording..' : 'stopped recording';
+  //   }
+  // );
+</script>
 
 <template>
-  <img id="logo" alt="Wails logo" src="./assets/images/logo-universal.png"/>
-  <HelloWorld/>
+  <body class="w-screen h-full min-h-screen bg-c-white transition-base">
+    <div class="w-full h-full">
+      <SpeechOutputView />
+      <RecordButton />
+      <NotificationCard />
+      <!-- <NotificationCard v-bind:notificationProps>
+        {{ notificationText }}
+      </NotificationCard> -->
+    </div>
+  </body>
 </template>
-
-<style>
-#logo {
-  display: block;
-  width: 50%;
-  height: 50%;
-  margin: auto;
-  padding: 10% 0 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-origin: content-box;
-}
-</style>
